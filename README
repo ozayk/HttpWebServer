@@ -1,0 +1,27 @@
+
+
+This webserver was built in python and the webapp was written in PHP.
+This is a simple HTTP server which parses all the http requests.
+It is left vulnerable intentionaly to practice penetration testing. Not suitable for real world deployment.
+
+The steps to execute the webserver are listed below.
+
+1. Specify the root folder for the webserver through the “server_config.ini” file as described in section 3.
+
+
+2. The WebServer.py file takes one argument which is the configuration file of “.ini” format.
+
+“#python WebServer.py server_config.ini”
+
+3. The usage of the “server_config.ini” file is explained in the file itself through comments. It
+accepts the hostname, port, disabled methods, server root location, log file names and the
+WebApp to execute. Two PHP webapps were written for this exercise. The “check_logon.php”
+authenticates the user and returns the result to the python server. The “user_handle.php” file
+handles the user registration, email update and user delete. These files are called from the
+python webserver by a “os.system” call and accept arguments accordingly. The
+“server_config.ini” file will accept the binary which will execute the webapp (“/usr/bin/php” for
+this excercise) and the webapp file path for both the required apps(“check_logon.php” and
+“user_handle.php”). Details of which are available in the “server_config.ini” file itself through
+comments and examples.
+
+-ozayk
